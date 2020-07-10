@@ -12,6 +12,9 @@ namespace CUESYSv._01
 {
     public class dbConn
     {
+        /// <summary>
+        /// //test/
+        /// </summary>
 
         ///// DB CONFIG START //////////////////////////////////////////////////////
         public string varConfigServer { get; set; }
@@ -118,7 +121,7 @@ namespace CUESYSv._01
         {
             connOpen();
             MySqlCommand comm = conn.CreateCommand();
-            comm.CommandText = "DELETE FROM `tblBookings` WHERE `tblBookings`.`bookingID` = @id";
+            comm.CommandText = "DELETE FROM `tblBookings` WHERE `tblBookings`.`id` = @id";
             comm.Parameters.AddWithValue("@id", id);
             comm.ExecuteNonQuery();
             connClose();

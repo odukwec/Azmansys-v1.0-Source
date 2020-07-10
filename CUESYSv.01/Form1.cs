@@ -51,7 +51,6 @@ namespace CUESYSv._01
         {//Hide all controls and only show those needed
             devLogs("resetControls triggered");
             foreach (Control control in this.Controls) { control.Visible = false; }//Hide all controls
-            lbCueSys.Visible = true;//Show logo
             panClock.Visible = true;//Show clock panel
             mainMenu.Visible = true;//Show menu
             foreach (var clockLbl in panClock.Controls.OfType<Label>()){ clockLbl.Visible = true; };//Show clock in panel
@@ -63,6 +62,7 @@ namespace CUESYSv._01
                     break;
                 case "landing":
                     dgRoomBookingsSummary.Visible = true;
+                    DeleteButton.Visible = true;
                     dbReturn("SELECT * FROM `tblBookings`");
                     break;
                 case "Book Room":
@@ -178,7 +178,6 @@ namespace CUESYSv._01
         private void Form1_Load(object sender, EventArgs e)
         {
             File.WriteAllText("DevLog.txt", String.Empty);//Clear contents of DevLog
-            lbCueSys.Font = new Font("Comic Sans MS", 40, FontStyle.Bold);
             this.ActiveControl = tbUserName;
             dbConfig();
             mysqlConn.connect();
@@ -400,6 +399,28 @@ namespace CUESYSv._01
         }
 
         private void cbPaid_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //This is for delete
+            string id = dgRoomBookingsSummary.SelectedCells[0].Value.ToString();
+            mysqlConn.deleteBooking(id);
+        }
+
+        private void customerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panClock_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

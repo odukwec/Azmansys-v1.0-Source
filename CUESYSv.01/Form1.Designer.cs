@@ -33,7 +33,6 @@
             this.tbUserPass = new System.Windows.Forms.TextBox();
             this.lbUserName = new System.Windows.Forms.Label();
             this.lbUserPass = new System.Windows.Forms.Label();
-            this.lbCueSys = new System.Windows.Forms.Label();
             this.btLogin = new System.Windows.Forms.Button();
             this.panClock = new System.Windows.Forms.Panel();
             this.lbClockSeconds = new System.Windows.Forms.Label();
@@ -93,6 +92,7 @@
             this.btRoomF = new System.Windows.Forms.Button();
             this.btRoomD = new System.Windows.Forms.Button();
             this.btRoomB = new System.Windows.Forms.Button();
+            this.DeleteButton = new System.Windows.Forms.Button();
             this.panClock.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgRoomBookingsSummary)).BeginInit();
             this.mainMenu.SuspendLayout();
@@ -137,17 +137,6 @@
             this.lbUserPass.TabIndex = 3;
             this.lbUserPass.Text = "Password";
             // 
-            // lbCueSys
-            // 
-            this.lbCueSys.AutoSize = true;
-            this.lbCueSys.Font = new System.Drawing.Font("Consolas", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCueSys.Location = new System.Drawing.Point(460, 23);
-            this.lbCueSys.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.lbCueSys.Name = "lbCueSys";
-            this.lbCueSys.Size = new System.Drawing.Size(553, 150);
-            this.lbCueSys.TabIndex = 4;
-            this.lbCueSys.Text = "CUE SYS";
-            // 
             // btLogin
             // 
             this.btLogin.Location = new System.Drawing.Point(404, 517);
@@ -170,6 +159,7 @@
             this.panClock.Name = "panClock";
             this.panClock.Size = new System.Drawing.Size(284, 106);
             this.panClock.TabIndex = 6;
+            this.panClock.Paint += new System.Windows.Forms.PaintEventHandler(this.panClock_Paint);
             // 
             // lbClockSeconds
             // 
@@ -273,6 +263,7 @@
             this.customerToolStripMenuItem.Name = "customerToolStripMenuItem";
             this.customerToolStripMenuItem.Size = new System.Drawing.Size(148, 36);
             this.customerToolStripMenuItem.Text = "Customers";
+            this.customerToolStripMenuItem.Click += new System.EventHandler(this.customerToolStripMenuItem_Click);
             // 
             // createCustomerToolStripMenuItem
             // 
@@ -581,6 +572,7 @@
             this.label1.Size = new System.Drawing.Size(201, 48);
             this.label1.TabIndex = 37;
             this.label1.Text = "Customer";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // mcDate
             // 
@@ -760,11 +752,23 @@
             this.btRoomB.UseVisualStyleBackColor = true;
             this.btRoomB.Click += new System.EventHandler(this.btRoomB_Click);
             // 
+            // DeleteButton
+            // 
+            this.DeleteButton.Location = new System.Drawing.Point(33, 57);
+            this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.Size = new System.Drawing.Size(178, 59);
+            this.DeleteButton.TabIndex = 44;
+            this.DeleteButton.Text = "Delete Selected";
+            this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1600, 865);
+            this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.btBook);
             this.Controls.Add(this.tbTime);
             this.Controls.Add(this.label5);
@@ -801,7 +805,6 @@
             this.Controls.Add(this.dgRoomBookingsSummary);
             this.Controls.Add(this.panClock);
             this.Controls.Add(this.btLogin);
-            this.Controls.Add(this.lbCueSys);
             this.Controls.Add(this.lbUserPass);
             this.Controls.Add(this.lbUserName);
             this.Controls.Add(this.tbUserPass);
@@ -810,7 +813,7 @@
             this.MainMenuStrip = this.mainMenu;
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Flight booking";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panClock.ResumeLayout(false);
             this.panClock.PerformLayout();
@@ -829,7 +832,6 @@
         private System.Windows.Forms.TextBox tbUserPass;
         private System.Windows.Forms.Label lbUserName;
         private System.Windows.Forms.Label lbUserPass;
-        private System.Windows.Forms.Label lbCueSys;
         private System.Windows.Forms.Button btLogin;
         private System.Windows.Forms.Panel panClock;
         private System.Windows.Forms.Label lbClockSeconds;
@@ -889,6 +891,7 @@
         private System.Windows.Forms.TextBox tbCustomer;
         private System.Windows.Forms.TextBox tbCost;
         private System.Windows.Forms.Label lbBookingInfo;
+        private System.Windows.Forms.Button DeleteButton;
     }
 }
 
