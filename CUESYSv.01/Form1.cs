@@ -65,6 +65,8 @@ namespace CUESYSv._01
                 case "landing":
                     dgRoomBookingsSummary.Visible = true;
                     DeleteButton.Visible = true;
+                    button3.Visible = true;
+                    textBox1.Visible = true; 
                     dbReturn("SELECT * FROM `tblBookings`");
                     break;
                 case "Book Room":
@@ -108,6 +110,7 @@ namespace CUESYSv._01
                 case "view customers":
                     //show all customers
                     dgRoomBookingsSummary.Visible = true;
+                    button4.Visible = true;
                     dbReturn("SELECT * FROM `tblCustomer`");
                     button1.Visible = true;
                     break;
@@ -292,7 +295,7 @@ namespace CUESYSv._01
         {
             Form2 f2 = new Form2();
             f2.Visible=true;
-           devLogs("book room request");
+           devLogs("book flight request");
         }
 
         private void btRoomA_Click(object sender, EventArgs e)
@@ -475,6 +478,25 @@ namespace CUESYSv._01
         }
 
         private void button2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form2 f2 = new Form2();
+            f2.Visible = true;
+            devLogs("book flight request");
+           
+            
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+          resetControls("create customer"); devLogs("create customer request");
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
 
         }

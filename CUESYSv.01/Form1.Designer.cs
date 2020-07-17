@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tbUserName = new System.Windows.Forms.TextBox();
             this.tbUserPass = new System.Windows.Forms.TextBox();
             this.lbUserName = new System.Windows.Forms.Label();
@@ -97,6 +99,9 @@
             this.btRoomB = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dgRoomBookingsSummary = new System.Windows.Forms.DataGridView();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panClock.SuspendLayout();
             this.mainMenu.SuspendLayout();
             this.panFloorLayout.SuspendLayout();
@@ -805,7 +810,23 @@
             // dgRoomBookingsSummary
             // 
             this.dgRoomBookingsSummary.BackgroundColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgRoomBookingsSummary.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgRoomBookingsSummary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgRoomBookingsSummary.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgRoomBookingsSummary.Location = new System.Drawing.Point(15, 135);
             this.dgRoomBookingsSummary.Margin = new System.Windows.Forms.Padding(6);
             this.dgRoomBookingsSummary.Name = "dgRoomBookingsSummary";
@@ -815,12 +836,50 @@
             this.dgRoomBookingsSummary.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgRoomBookingsSummary_CellContentClick);
             this.dgRoomBookingsSummary.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgRoomBookingsSummary_CellMouseDoubleClick);
             // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(182)))), ((int)(((byte)(107)))));
+            this.button3.Location = new System.Drawing.Point(258, 57);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(179, 59);
+            this.button3.TabIndex = 47;
+            this.button3.Text = "Add booking";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(182)))), ((int)(((byte)(107)))));
+            this.button4.Location = new System.Drawing.Point(44, 57);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(179, 59);
+            this.button4.TabIndex = 48;
+            this.button4.Text = "Add Customer";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Mistral", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(233)))), ((int)(((byte)(0)))));
+            this.textBox1.Location = new System.Drawing.Point(546, -18);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(466, 156);
+            this.textBox1.TabIndex = 49;
+            this.textBox1.Text = "AzmanSys";
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1696, 954);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.tbCustNationailty);
             this.Controls.Add(this.Nationality);
@@ -870,6 +929,7 @@
             this.MainMenuStrip = this.mainMenu;
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Form1";
+            this.ShowInTaskbar = false;
             this.Text = "Flight booking";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panClock.ResumeLayout(false);
@@ -953,6 +1013,9 @@
         private System.Windows.Forms.Panel panFloorLayout;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dgRoomBookingsSummary;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

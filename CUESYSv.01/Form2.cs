@@ -31,6 +31,7 @@ namespace CUESYSv._01
             }
             catch { return false; }
         }
+
         private void Form2_Load(object sender, EventArgs e)
         {
 
