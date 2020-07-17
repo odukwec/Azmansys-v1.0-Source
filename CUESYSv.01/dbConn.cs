@@ -73,11 +73,12 @@ namespace CUESYSv._01
             connClose();
             return ds;
         }
-        public void insertCustomer(string custContact, string custEmail, string custTel, string custAddr1, string custAddr2, string custTownCity, string custPostcode)
+        public void insertCustomer(string custContact, string custNationality, string custEmail, string custTel, string custAddr1, string custAddr2, string custTownCity, string custPostcode)
         {
             MySqlCommand comm = conn.CreateCommand();
-            comm.CommandText = "INSERT INTO `tblCustomer` (`custContact`, `custEmail`, `custTel`, `custAddr1`, `custAddr2`, `custTownCity`, `custPostcode`) VALUES (@custContact, @custEmail, @custTel, @custAddr1, @custAddr2, @custTownCity, @custPostcode);";
+            comm.CommandText = "INSERT INTO `tblCustomer` (`custContact`, `custNationality`, `custEmail`, `custTel`, `custAddr1`, `custAddr2`, `custTownCity`, `custPostcode`) VALUES (@custContact, @custNationality, @custEmail, @custTel, @custAddr1, @custAddr2, @custTownCity, @custPostcode);";
             comm.Parameters.AddWithValue("@custContact", custContact);
+            comm.Parameters.AddWithValue("@custNationality", custNationality);
             comm.Parameters.AddWithValue("@custEmail", custEmail);
             comm.Parameters.AddWithValue("@custTel", custTel);
             comm.Parameters.AddWithValue("@custAddr1", custAddr1);
@@ -130,10 +131,11 @@ namespace CUESYSv._01
         {
             connOpen();
             MySqlCommand comm = conn.CreateCommand();
-            comm.CommandText = "DELETE FROM `tblCustomer` WHERE `tblCustomer`.`custID` = @id";
+            comm.CommandText = "DELETE FROM `tblCustomer` WHERE `tblCustomer`.`id` = @id";
             comm.Parameters.AddWithValue("@id", id);
             comm.ExecuteNonQuery();
             connClose();
         }
+  
     }
 }

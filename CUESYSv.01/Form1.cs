@@ -26,6 +26,8 @@ namespace CUESYSv._01
         dbConn mysqlConn = new dbConn();
         private string varFloor;
         private string varRoom;
+        private readonly object tbcustNationality;
+
         ///// VARIABLES END ////////////////////////////////////////////////////////
 
         ///// METHODS START ////////////////////////////////////////////////////////
@@ -92,6 +94,8 @@ namespace CUESYSv._01
                     lbCustTitle.Visible = true;
                     lbCustTownCity.Visible = true;
                     tbCustAdd1.Visible = true;
+                    Nationality.Visible = true;
+                    tbCustNationailty.Visible = true;
                     tbCustAdd2.Visible = true;
                     tbCustContact.Visible = true;
                     tbCustEmail.Visible = true;
@@ -105,6 +109,7 @@ namespace CUESYSv._01
                     //show all customers
                     dgRoomBookingsSummary.Visible = true;
                     dbReturn("SELECT * FROM `tblCustomer`");
+                    button1.Visible = true;
                     break;
                 case "Exit":
                     Application.Exit();
@@ -358,9 +363,9 @@ namespace CUESYSv._01
             devLogs("insert new customer");
             if (mysqlConn.connOpen() == true)
             {
-                mysqlConn.insertCustomer(tbCustContact.Text, tbCustEmail.Text, tbCustTel.Text, tbCustAdd1.Text, tbCustAdd2.Text, tbCustTownCity.Text, tbCustPostcode.Text);
+                mysqlConn.insertCustomer(tbCustContact.Text, tbCustNationailty.Text, tbCustEmail.Text, tbCustTel.Text, tbCustAdd1.Text, tbCustAdd2.Text, tbCustTownCity.Text, tbCustPostcode.Text);
             }
-            tbCustContact.Text = tbCustEmail.Text = tbCustTel.Text = tbCustAdd1.Text = tbCustAdd2.Text = tbCustTownCity.Text = tbCustPostcode.Text = "";
+            tbCustContact.Text = tbCustNationailty.Text = tbCustEmail.Text = tbCustTel.Text = tbCustAdd1.Text = tbCustAdd2.Text = tbCustTownCity.Text = tbCustPostcode.Text = "";
             resetControls("view customers");
         }
 
@@ -405,7 +410,7 @@ namespace CUESYSv._01
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //This is for delete
+            //This is for delete booking
             string id = dgRoomBookingsSummary.SelectedCells[0].Value.ToString();
             mysqlConn.deleteBooking(id);
         }
@@ -422,8 +427,59 @@ namespace CUESYSv._01
 
         private void label1_Click(object sender, EventArgs e)
         {
+            string id = tbCustNationailty.Text.ToString();
+            
+        }
+
+        private void dgRoomBookingsSummary_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
-        ///// EVENTS END ///////////////////////////////////////////////////////////
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            //This is for delete
+            string id = dgRoomBookingsSummary.SelectedCells[0].Value.ToString();
+            mysqlConn.deleteCustomer(id);
+        }
+
+        private void roomsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mainMenu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void btCustUpdate_Click(object sender, EventArgs e)
+        {
+            
+
+    }
+
+    private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+
+        ///// EVENTS END ////////////////////////////////////////////////
     }
 }

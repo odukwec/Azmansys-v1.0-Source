@@ -49,14 +49,15 @@
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(145, 82);
+            this.label1.BackColor = System.Drawing.SystemColors.Info;
+            this.label1.Location = new System.Drawing.Point(151, 83);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(137, 25);
             this.label1.TabIndex = 0;
@@ -65,8 +66,8 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(145, 124);
+            this.label2.BackColor = System.Drawing.SystemColors.Info;
+            this.label2.Location = new System.Drawing.Point(151, 125);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 25);
             this.label2.TabIndex = 1;
@@ -75,8 +76,8 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(145, 173);
+            this.label3.BackColor = System.Drawing.SystemColors.Info;
+            this.label3.Location = new System.Drawing.Point(151, 174);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(124, 25);
             this.label3.TabIndex = 2;
@@ -85,8 +86,8 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(145, 224);
+            this.label4.BackColor = System.Drawing.SystemColors.Info;
+            this.label4.Location = new System.Drawing.Point(151, 225);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 25);
             this.label4.TabIndex = 3;
@@ -96,8 +97,8 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label5.Location = new System.Drawing.Point(145, 277);
+            this.label5.BackColor = System.Drawing.SystemColors.Info;
+            this.label5.Location = new System.Drawing.Point(151, 278);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(148, 25);
             this.label5.TabIndex = 4;
@@ -106,8 +107,8 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label6.Location = new System.Drawing.Point(145, 332);
+            this.label6.BackColor = System.Drawing.SystemColors.Info;
+            this.label6.Location = new System.Drawing.Point(151, 333);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(60, 25);
             this.label6.TabIndex = 5;
@@ -117,8 +118,8 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label7.Location = new System.Drawing.Point(145, 669);
+            this.label7.BackColor = System.Drawing.SystemColors.Info;
+            this.label7.Location = new System.Drawing.Point(55, 494);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(65, 25);
             this.label7.TabIndex = 6;
@@ -127,8 +128,8 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label8.Location = new System.Drawing.Point(145, 716);
+            this.label8.BackColor = System.Drawing.SystemColors.Info;
+            this.label8.Location = new System.Drawing.Point(55, 541);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(56, 25);
             this.label8.TabIndex = 7;
@@ -137,8 +138,8 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label9.Location = new System.Drawing.Point(135, 741);
+            this.label9.BackColor = System.Drawing.SystemColors.Info;
+            this.label9.Location = new System.Drawing.Point(138, 636);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(57, 25);
             this.label9.TabIndex = 8;
@@ -146,49 +147,49 @@
             // 
             // CustContact
             // 
-            this.CustContact.Location = new System.Drawing.Point(312, 79);
+            this.CustContact.Location = new System.Drawing.Point(318, 80);
             this.CustContact.Name = "CustContact";
             this.CustContact.Size = new System.Drawing.Size(367, 33);
             this.CustContact.TabIndex = 9;
             // 
             // Origin
             // 
-            this.Origin.Location = new System.Drawing.Point(312, 124);
+            this.Origin.Location = new System.Drawing.Point(318, 125);
             this.Origin.Name = "Origin";
             this.Origin.Size = new System.Drawing.Size(367, 33);
             this.Origin.TabIndex = 10;
             // 
             // Destination
             // 
-            this.Destination.Location = new System.Drawing.Point(313, 165);
+            this.Destination.Location = new System.Drawing.Point(319, 166);
             this.Destination.Name = "Destination";
             this.Destination.Size = new System.Drawing.Size(366, 33);
             this.Destination.TabIndex = 11;
             // 
             // Airline
             // 
-            this.Airline.Location = new System.Drawing.Point(312, 216);
+            this.Airline.Location = new System.Drawing.Point(318, 217);
             this.Airline.Name = "Airline";
             this.Airline.Size = new System.Drawing.Size(367, 33);
             this.Airline.TabIndex = 12;
             // 
             // FlightNumber
             // 
-            this.FlightNumber.Location = new System.Drawing.Point(313, 271);
+            this.FlightNumber.Location = new System.Drawing.Point(319, 272);
             this.FlightNumber.Name = "FlightNumber";
             this.FlightNumber.Size = new System.Drawing.Size(366, 33);
             this.FlightNumber.TabIndex = 13;
             // 
             // Time
             // 
-            this.Time.Location = new System.Drawing.Point(313, 661);
+            this.Time.Location = new System.Drawing.Point(223, 486);
             this.Time.Name = "Time";
             this.Time.Size = new System.Drawing.Size(366, 33);
             this.Time.TabIndex = 15;
             // 
             // Cost
             // 
-            this.Cost.Location = new System.Drawing.Point(313, 708);
+            this.Cost.Location = new System.Drawing.Point(223, 533);
             this.Cost.Name = "Cost";
             this.Cost.Size = new System.Drawing.Size(366, 33);
             this.Cost.TabIndex = 16;
@@ -196,7 +197,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(198, 739);
+            this.checkBox1.Location = new System.Drawing.Point(201, 634);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(28, 27);
             this.checkBox1.TabIndex = 17;
@@ -205,12 +206,13 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(313, 820);
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(182)))), ((int)(((byte)(107)))));
+            this.button1.Location = new System.Drawing.Point(190, 667);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(180, 64);
             this.button1.TabIndex = 18;
             this.button1.Text = "Submit";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // monthCalendar1
@@ -222,40 +224,52 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel1.BackColor = System.Drawing.SystemColors.Info;
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.monthCalendar1);
+            this.panel1.Controls.Add(this.Cost);
             this.panel1.Controls.Add(this.checkBox1);
+            this.panel1.Controls.Add(this.Time);
             this.panel1.Controls.Add(this.label9);
-            this.panel1.Location = new System.Drawing.Point(90, 38);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Location = new System.Drawing.Point(132, 45);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(676, 874);
+            this.panel1.Size = new System.Drawing.Size(639, 868);
             this.panel1.TabIndex = 20;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel2.Location = new System.Drawing.Point(76, 12);
+            this.panel2.BackColor = System.Drawing.Color.Gold;
+            this.panel2.Location = new System.Drawing.Point(100, 24);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(702, 923);
+            this.panel2.Size = new System.Drawing.Size(692, 902);
             this.panel2.TabIndex = 21;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.button2.Location = new System.Drawing.Point(504, 784);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(107, 66);
+            this.button2.TabIndex = 20;
+            this.button2.Text = "Print Invoice";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1062, 947);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.Cost);
-            this.Controls.Add(this.Time);
+            this.ClientSize = new System.Drawing.Size(892, 964);
             this.Controls.Add(this.FlightNumber);
             this.Controls.Add(this.Airline);
             this.Controls.Add(this.Destination);
             this.Controls.Add(this.Origin);
             this.Controls.Add(this.CustContact);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -298,5 +312,6 @@
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button button2;
     }
 }

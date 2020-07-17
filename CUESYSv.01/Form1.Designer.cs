@@ -39,7 +39,6 @@
             this.lbClockDate = new System.Windows.Forms.Label();
             this.lbClockTime = new System.Windows.Forms.Label();
             this.timeClock = new System.Windows.Forms.Timer(this.components);
-            this.dgRoomBookingsSummary = new System.Windows.Forms.DataGridView();
             this.mainMenu = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewDevLogsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -83,6 +82,10 @@
             this.tbCustomer = new System.Windows.Forms.TextBox();
             this.tbCost = new System.Windows.Forms.TextBox();
             this.lbBookingInfo = new System.Windows.Forms.Label();
+            this.DeleteButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.tbCustNationailty = new System.Windows.Forms.TextBox();
+            this.Nationality = new System.Windows.Forms.Label();
             this.panFloorLayout = new System.Windows.Forms.Panel();
             this.btRoomG = new System.Windows.Forms.Button();
             this.btRoomE = new System.Windows.Forms.Button();
@@ -92,11 +95,12 @@
             this.btRoomF = new System.Windows.Forms.Button();
             this.btRoomD = new System.Windows.Forms.Button();
             this.btRoomB = new System.Windows.Forms.Button();
-            this.DeleteButton = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.dgRoomBookingsSummary = new System.Windows.Forms.DataGridView();
             this.panClock.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgRoomBookingsSummary)).BeginInit();
             this.mainMenu.SuspendLayout();
             this.panFloorLayout.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgRoomBookingsSummary)).BeginInit();
             this.SuspendLayout();
             // 
             // tbUserName
@@ -120,7 +124,7 @@
             // lbUserName
             // 
             this.lbUserName.AutoSize = true;
-            this.lbUserName.Location = new System.Drawing.Point(266, 283);
+            this.lbUserName.Location = new System.Drawing.Point(265, 283);
             this.lbUserName.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbUserName.Name = "lbUserName";
             this.lbUserName.Size = new System.Drawing.Size(110, 25);
@@ -150,11 +154,11 @@
             // 
             // panClock
             // 
-            this.panClock.BackColor = System.Drawing.SystemColors.Control;
+            this.panClock.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panClock.Controls.Add(this.lbClockSeconds);
             this.panClock.Controls.Add(this.lbClockDate);
             this.panClock.Controls.Add(this.lbClockTime);
-            this.panClock.Location = new System.Drawing.Point(1292, 17);
+            this.panClock.Location = new System.Drawing.Point(1149, 9);
             this.panClock.Margin = new System.Windows.Forms.Padding(6);
             this.panClock.Name = "panClock";
             this.panClock.Size = new System.Drawing.Size(284, 106);
@@ -187,7 +191,7 @@
             // 
             this.lbClockTime.AutoSize = true;
             this.lbClockTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbClockTime.Location = new System.Drawing.Point(130, 44);
+            this.lbClockTime.Location = new System.Drawing.Point(131, 44);
             this.lbClockTime.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbClockTime.Name = "lbClockTime";
             this.lbClockTime.Size = new System.Drawing.Size(0, 55);
@@ -198,17 +202,6 @@
             this.timeClock.Enabled = true;
             this.timeClock.Interval = 1000;
             this.timeClock.Tick += new System.EventHandler(this.timeClock_Tick);
-            // 
-            // dgRoomBookingsSummary
-            // 
-            this.dgRoomBookingsSummary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgRoomBookingsSummary.Location = new System.Drawing.Point(24, 183);
-            this.dgRoomBookingsSummary.Margin = new System.Windows.Forms.Padding(6);
-            this.dgRoomBookingsSummary.Name = "dgRoomBookingsSummary";
-            this.dgRoomBookingsSummary.RowHeadersWidth = 82;
-            this.dgRoomBookingsSummary.Size = new System.Drawing.Size(1552, 675);
-            this.dgRoomBookingsSummary.TabIndex = 7;
-            this.dgRoomBookingsSummary.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgRoomBookingsSummary_CellMouseDoubleClick);
             // 
             // mainMenu
             // 
@@ -221,8 +214,9 @@
             this.roomsToolStripMenuItem});
             this.mainMenu.Location = new System.Drawing.Point(0, 0);
             this.mainMenu.Name = "mainMenu";
-            this.mainMenu.Size = new System.Drawing.Size(1600, 40);
+            this.mainMenu.Size = new System.Drawing.Size(1696, 40);
             this.mainMenu.TabIndex = 8;
+            this.mainMenu.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.mainMenu_ItemClicked);
             // 
             // fileToolStripMenuItem
             // 
@@ -285,8 +279,9 @@
             this.bookRoomToolStripMenuItem,
             this.viewBookingsToolStripMenuItem});
             this.roomsToolStripMenuItem.Name = "roomsToolStripMenuItem";
-            this.roomsToolStripMenuItem.Size = new System.Drawing.Size(107, 36);
-            this.roomsToolStripMenuItem.Text = "Rooms";
+            this.roomsToolStripMenuItem.Size = new System.Drawing.Size(140, 36);
+            this.roomsToolStripMenuItem.Text = "Bookings ";
+            this.roomsToolStripMenuItem.Click += new System.EventHandler(this.roomsToolStripMenuItem_Click);
             // 
             // bookRoomToolStripMenuItem
             // 
@@ -333,7 +328,7 @@
             // lbCustContact
             // 
             this.lbCustContact.AutoSize = true;
-            this.lbCustContact.Location = new System.Drawing.Point(722, 296);
+            this.lbCustContact.Location = new System.Drawing.Point(721, 296);
             this.lbCustContact.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbCustContact.Name = "lbCustContact";
             this.lbCustContact.Size = new System.Drawing.Size(184, 25);
@@ -359,7 +354,7 @@
             // lbCustEmail
             // 
             this.lbCustEmail.AutoSize = true;
-            this.lbCustEmail.Location = new System.Drawing.Point(722, 344);
+            this.lbCustEmail.Location = new System.Drawing.Point(721, 344);
             this.lbCustEmail.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbCustEmail.Name = "lbCustEmail";
             this.lbCustEmail.Size = new System.Drawing.Size(145, 25);
@@ -377,7 +372,7 @@
             // lbCustTel
             // 
             this.lbCustTel.AutoSize = true;
-            this.lbCustTel.Location = new System.Drawing.Point(722, 394);
+            this.lbCustTel.Location = new System.Drawing.Point(721, 394);
             this.lbCustTel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbCustTel.Name = "lbCustTel";
             this.lbCustTel.Size = new System.Drawing.Size(194, 25);
@@ -395,7 +390,7 @@
             // lbCustTownCity
             // 
             this.lbCustTownCity.AutoSize = true;
-            this.lbCustTownCity.Location = new System.Drawing.Point(722, 542);
+            this.lbCustTownCity.Location = new System.Drawing.Point(721, 540);
             this.lbCustTownCity.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbCustTownCity.Name = "lbCustTownCity";
             this.lbCustTownCity.Size = new System.Drawing.Size(119, 25);
@@ -413,7 +408,7 @@
             // lbCustAdd2
             // 
             this.lbCustAdd2.AutoSize = true;
-            this.lbCustAdd2.Location = new System.Drawing.Point(722, 492);
+            this.lbCustAdd2.Location = new System.Drawing.Point(721, 492);
             this.lbCustAdd2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbCustAdd2.Name = "lbCustAdd2";
             this.lbCustAdd2.Size = new System.Drawing.Size(156, 25);
@@ -431,7 +426,7 @@
             // lbCustAdd1
             // 
             this.lbCustAdd1.AutoSize = true;
-            this.lbCustAdd1.Location = new System.Drawing.Point(722, 444);
+            this.lbCustAdd1.Location = new System.Drawing.Point(721, 444);
             this.lbCustAdd1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbCustAdd1.Name = "lbCustAdd1";
             this.lbCustAdd1.Size = new System.Drawing.Size(156, 25);
@@ -440,7 +435,7 @@
             // 
             // tbCustPostcode
             // 
-            this.tbCustPostcode.Location = new System.Drawing.Point(916, 587);
+            this.tbCustPostcode.Location = new System.Drawing.Point(916, 580);
             this.tbCustPostcode.Margin = new System.Windows.Forms.Padding(6);
             this.tbCustPostcode.Name = "tbCustPostcode";
             this.tbCustPostcode.Size = new System.Drawing.Size(196, 31);
@@ -449,7 +444,7 @@
             // lbCustPostcode
             // 
             this.lbCustPostcode.AutoSize = true;
-            this.lbCustPostcode.Location = new System.Drawing.Point(722, 592);
+            this.lbCustPostcode.Location = new System.Drawing.Point(721, 580);
             this.lbCustPostcode.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbCustPostcode.Name = "lbCustPostcode";
             this.lbCustPostcode.Size = new System.Drawing.Size(102, 25);
@@ -468,49 +463,55 @@
             // 
             // btCustSave
             // 
-            this.btCustSave.Location = new System.Drawing.Point(916, 638);
+            this.btCustSave.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btCustSave.Location = new System.Drawing.Point(916, 720);
             this.btCustSave.Margin = new System.Windows.Forms.Padding(6);
             this.btCustSave.Name = "btCustSave";
             this.btCustSave.Size = new System.Drawing.Size(200, 44);
             this.btCustSave.TabIndex = 28;
             this.btCustSave.Text = "Save";
-            this.btCustSave.UseVisualStyleBackColor = true;
+            this.btCustSave.UseVisualStyleBackColor = false;
             this.btCustSave.Click += new System.EventHandler(this.btCustSave_Click);
             // 
             // btCustUpdate
             // 
-            this.btCustUpdate.Location = new System.Drawing.Point(914, 640);
+            this.btCustUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(182)))), ((int)(((byte)(107)))));
+            this.btCustUpdate.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btCustUpdate.Location = new System.Drawing.Point(913, 670);
             this.btCustUpdate.Margin = new System.Windows.Forms.Padding(6);
             this.btCustUpdate.Name = "btCustUpdate";
             this.btCustUpdate.Size = new System.Drawing.Size(200, 44);
             this.btCustUpdate.TabIndex = 29;
             this.btCustUpdate.Text = "Update";
-            this.btCustUpdate.UseVisualStyleBackColor = true;
+            this.btCustUpdate.UseVisualStyleBackColor = false;
+            this.btCustUpdate.Click += new System.EventHandler(this.btCustUpdate_Click);
             // 
             // btCustDelete
             // 
-            this.btCustDelete.Location = new System.Drawing.Point(914, 696);
+            this.btCustDelete.BackColor = System.Drawing.Color.Red;
+            this.btCustDelete.Location = new System.Drawing.Point(913, 770);
             this.btCustDelete.Margin = new System.Windows.Forms.Padding(6);
             this.btCustDelete.Name = "btCustDelete";
             this.btCustDelete.Size = new System.Drawing.Size(200, 44);
             this.btCustDelete.TabIndex = 30;
             this.btCustDelete.Text = "Delete";
-            this.btCustDelete.UseVisualStyleBackColor = true;
+            this.btCustDelete.UseVisualStyleBackColor = false;
             // 
             // btBook
             // 
-            this.btBook.Location = new System.Drawing.Point(1034, 794);
+            this.btBook.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(186)))), ((int)(((byte)(107)))));
+            this.btBook.Location = new System.Drawing.Point(1033, 830);
             this.btBook.Margin = new System.Windows.Forms.Padding(6);
             this.btBook.Name = "btBook";
             this.btBook.Size = new System.Drawing.Size(150, 44);
             this.btBook.TabIndex = 43;
             this.btBook.Text = "BOOK";
-            this.btBook.UseVisualStyleBackColor = true;
+            this.btBook.UseVisualStyleBackColor = false;
             this.btBook.Click += new System.EventHandler(this.btBook_Click);
             // 
             // tbTime
             // 
-            this.tbTime.Location = new System.Drawing.Point(730, 658);
+            this.tbTime.Location = new System.Drawing.Point(731, 670);
             this.tbTime.Margin = new System.Windows.Forms.Padding(6);
             this.tbTime.Mask = "00:00";
             this.tbTime.Name = "tbTime";
@@ -577,7 +578,7 @@
             // mcDate
             // 
             this.mcDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 3.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mcDate.Location = new System.Drawing.Point(730, 327);
+            this.mcDate.Location = new System.Drawing.Point(731, 327);
             this.mcDate.Margin = new System.Windows.Forms.Padding(18, 17, 18, 17);
             this.mcDate.Name = "mcDate";
             this.mcDate.TabIndex = 36;
@@ -588,7 +589,7 @@
             this.cbPaid.Location = new System.Drawing.Point(744, 794);
             this.cbPaid.Margin = new System.Windows.Forms.Padding(6);
             this.cbPaid.Name = "cbPaid";
-            this.cbPaid.Size = new System.Drawing.Size(50, 48);
+            this.cbPaid.Size = new System.Drawing.Size(49, 48);
             this.cbPaid.TabIndex = 35;
             this.cbPaid.UseVisualStyleBackColor = true;
             this.cbPaid.CheckedChanged += new System.EventHandler(this.cbPaid_CheckedChanged);
@@ -596,19 +597,19 @@
             // tbCustomer
             // 
             this.tbCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCustomer.Location = new System.Drawing.Point(730, 250);
+            this.tbCustomer.Location = new System.Drawing.Point(731, 250);
             this.tbCustomer.Margin = new System.Windows.Forms.Padding(6);
             this.tbCustomer.Name = "tbCustomer";
-            this.tbCustomer.Size = new System.Drawing.Size(450, 51);
+            this.tbCustomer.Size = new System.Drawing.Size(449, 51);
             this.tbCustomer.TabIndex = 34;
             // 
             // tbCost
             // 
             this.tbCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCost.Location = new System.Drawing.Point(730, 708);
+            this.tbCost.Location = new System.Drawing.Point(731, 708);
             this.tbCost.Margin = new System.Windows.Forms.Padding(6);
             this.tbCost.Name = "tbCost";
-            this.tbCost.Size = new System.Drawing.Size(450, 51);
+            this.tbCost.Size = new System.Drawing.Size(449, 51);
             this.tbCost.TabIndex = 33;
             // 
             // lbBookingInfo
@@ -621,6 +622,44 @@
             this.lbBookingInfo.Size = new System.Drawing.Size(251, 48);
             this.lbBookingInfo.TabIndex = 32;
             this.lbBookingInfo.Text = "xxxxxxxxxxx";
+            // 
+            // DeleteButton
+            // 
+            this.DeleteButton.BackColor = System.Drawing.Color.Red;
+            this.DeleteButton.Location = new System.Drawing.Point(33, 57);
+            this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.Size = new System.Drawing.Size(179, 59);
+            this.DeleteButton.TabIndex = 44;
+            this.DeleteButton.Text = "Delete Selected";
+            this.DeleteButton.UseVisualStyleBackColor = false;
+            this.DeleteButton.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Red;
+            this.button1.Location = new System.Drawing.Point(248, 57);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(167, 58);
+            this.button1.TabIndex = 45;
+            this.button1.Text = "Delete customer";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // tbCustNationailty
+            // 
+            this.tbCustNationailty.Location = new System.Drawing.Point(913, 625);
+            this.tbCustNationailty.Name = "tbCustNationailty";
+            this.tbCustNationailty.Size = new System.Drawing.Size(202, 31);
+            this.tbCustNationailty.TabIndex = 17;
+            // 
+            // Nationality
+            // 
+            this.Nationality.AutoSize = true;
+            this.Nationality.Location = new System.Drawing.Point(721, 625);
+            this.Nationality.Name = "Nationality";
+            this.Nationality.Size = new System.Drawing.Size(113, 25);
+            this.Nationality.TabIndex = 18;
+            this.Nationality.Text = "Nationality";
             // 
             // panFloorLayout
             // 
@@ -674,7 +713,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btRoomC.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btRoomC.Location = new System.Drawing.Point(382, 396);
+            this.btRoomC.Location = new System.Drawing.Point(383, 396);
             this.btRoomC.Margin = new System.Windows.Forms.Padding(6);
             this.btRoomC.Name = "btRoomC";
             this.btRoomC.Size = new System.Drawing.Size(220, 192);
@@ -744,7 +783,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btRoomB.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btRoomB.Location = new System.Drawing.Point(310, 10);
+            this.btRoomB.Location = new System.Drawing.Point(311, 10);
             this.btRoomB.Margin = new System.Windows.Forms.Padding(6);
             this.btRoomB.Name = "btRoomB";
             this.btRoomB.Size = new System.Drawing.Size(220, 192);
@@ -752,22 +791,41 @@
             this.btRoomB.UseVisualStyleBackColor = true;
             this.btRoomB.Click += new System.EventHandler(this.btRoomB_Click);
             // 
-            // DeleteButton
+            // button2
             // 
-            this.DeleteButton.Location = new System.Drawing.Point(33, 57);
-            this.DeleteButton.Name = "DeleteButton";
-            this.DeleteButton.Size = new System.Drawing.Size(178, 59);
-            this.DeleteButton.TabIndex = 44;
-            this.DeleteButton.Text = "Delete Selected";
-            this.DeleteButton.UseVisualStyleBackColor = true;
-            this.DeleteButton.Click += new System.EventHandler(this.button1_Click);
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(182)))), ((int)(((byte)(107)))));
+            this.button2.Location = new System.Drawing.Point(902, 794);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(122, 45);
+            this.button2.TabIndex = 46;
+            this.button2.Text = "Print ";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // dgRoomBookingsSummary
+            // 
+            this.dgRoomBookingsSummary.BackgroundColor = System.Drawing.SystemColors.Info;
+            this.dgRoomBookingsSummary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgRoomBookingsSummary.Location = new System.Drawing.Point(15, 135);
+            this.dgRoomBookingsSummary.Margin = new System.Windows.Forms.Padding(6);
+            this.dgRoomBookingsSummary.Name = "dgRoomBookingsSummary";
+            this.dgRoomBookingsSummary.RowHeadersWidth = 82;
+            this.dgRoomBookingsSummary.Size = new System.Drawing.Size(1418, 760);
+            this.dgRoomBookingsSummary.TabIndex = 7;
+            this.dgRoomBookingsSummary.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgRoomBookingsSummary_CellContentClick);
+            this.dgRoomBookingsSummary.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgRoomBookingsSummary_CellMouseDoubleClick);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1600, 865);
+            this.ClientSize = new System.Drawing.Size(1696, 954);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.tbCustNationailty);
+            this.Controls.Add(this.Nationality);
+            this.Controls.Add(this.btCustDelete);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.btBook);
             this.Controls.Add(this.tbTime);
@@ -776,12 +834,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.mcDate);
             this.Controls.Add(this.cbPaid);
             this.Controls.Add(this.tbCustomer);
-            this.Controls.Add(this.tbCost);
             this.Controls.Add(this.lbBookingInfo);
-            this.Controls.Add(this.btCustDelete);
             this.Controls.Add(this.btCustUpdate);
             this.Controls.Add(this.btCustSave);
             this.Controls.Add(this.lbCustTitle);
@@ -801,7 +856,6 @@
             this.Controls.Add(this.lbCustContact);
             this.Controls.Add(this.cbBuilding);
             this.Controls.Add(this.cbFloor);
-            this.Controls.Add(this.panFloorLayout);
             this.Controls.Add(this.dgRoomBookingsSummary);
             this.Controls.Add(this.panClock);
             this.Controls.Add(this.btLogin);
@@ -810,6 +864,9 @@
             this.Controls.Add(this.tbUserPass);
             this.Controls.Add(this.tbUserName);
             this.Controls.Add(this.mainMenu);
+            this.Controls.Add(this.mcDate);
+            this.Controls.Add(this.tbCost);
+            this.Controls.Add(this.panFloorLayout);
             this.MainMenuStrip = this.mainMenu;
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Form1";
@@ -817,10 +874,10 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panClock.ResumeLayout(false);
             this.panClock.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgRoomBookingsSummary)).EndInit();
             this.mainMenu.ResumeLayout(false);
             this.mainMenu.PerformLayout();
             this.panFloorLayout.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgRoomBookingsSummary)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -838,7 +895,6 @@
         private System.Windows.Forms.Label lbClockDate;
         private System.Windows.Forms.Label lbClockTime;
         private System.Windows.Forms.Timer timeClock;
-        private System.Windows.Forms.DataGridView dgRoomBookingsSummary;
         private System.Windows.Forms.MenuStrip mainMenu;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewDevLogsToolStripMenuItem;
@@ -846,16 +902,7 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem customerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem roomsToolStripMenuItem;
-        private System.Windows.Forms.Button btRoomB;
         private System.Windows.Forms.ToolStripMenuItem bookRoomToolStripMenuItem;
-        private System.Windows.Forms.Panel panFloorLayout;
-        private System.Windows.Forms.Button btRoomG;
-        private System.Windows.Forms.Button btRoomE;
-        private System.Windows.Forms.Button btRoomC;
-        private System.Windows.Forms.Button btRoomA;
-        private System.Windows.Forms.Button btRoomH;
-        private System.Windows.Forms.Button btRoomF;
-        private System.Windows.Forms.Button btRoomD;
         private System.Windows.Forms.ComboBox cbFloor;
         private System.Windows.Forms.ComboBox cbBuilding;
         private System.Windows.Forms.ToolStripMenuItem createCustomerToolStripMenuItem;
@@ -892,6 +939,20 @@
         private System.Windows.Forms.TextBox tbCost;
         private System.Windows.Forms.Label lbBookingInfo;
         private System.Windows.Forms.Button DeleteButton;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox tbCustNationailty;
+        private System.Windows.Forms.Label Nationality;
+        private System.Windows.Forms.Button btRoomB;
+        private System.Windows.Forms.Button btRoomD;
+        private System.Windows.Forms.Button btRoomF;
+        private System.Windows.Forms.Button btRoomH;
+        private System.Windows.Forms.Button btRoomA;
+        private System.Windows.Forms.Button btRoomC;
+        private System.Windows.Forms.Button btRoomE;
+        private System.Windows.Forms.Button btRoomG;
+        private System.Windows.Forms.Panel panFloorLayout;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridView dgRoomBookingsSummary;
     }
 }
 

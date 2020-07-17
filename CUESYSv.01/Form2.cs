@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CUESYSv._01
+namespace CUESYSv._01 //this
 {
     public partial class Form2 : Form
     {
@@ -64,6 +64,14 @@ namespace CUESYSv._01
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string message = "Printing!"; // box will say Printing! when clicked
+            string title = "Print Invoice"; //title of the Box
+            MessageBox.Show(message, title); //box will show message and title
 
         }
     }
