@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CUESYSv._01 //this
+namespace CUESYSv._01 
 {
     public partial class Form2 : Form
     {
@@ -46,7 +46,7 @@ namespace CUESYSv._01 //this
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) //
         {
             mysqlConn.connOpen();
             string Date = monthCalendar1.SelectionRange.Start.ToString("yyyy-MM-dd");
